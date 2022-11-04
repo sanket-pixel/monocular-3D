@@ -10,3 +10,43 @@ As it turns out, there are more than one ways to obtain these keypoints :
 2. A more involved approach is to use perspective geometry. In perspective geometry, if the 3D position ( of the centre of the 3D bounding box in global frame) , dimensions ( height, width, length) and orientation ( yaw, pitch, roll ) is given,  one can obtain the keypoints using projective transformations. But how do we obtain the dimension, orientation and position? The dimension and orientation can be predicted using CNN. And how do we find the position, given the predicted orientation and dimension.
 
 Here is where the essensce of approach proposed by the paper comes into play. Since we have two different ways to obtain the same keypoints, we can minimize the difference between these two sets of keypoints by optimizing over the 3D position. The approach leverages the best parts from both CNN and perspective geometry in an intuitive and end-to-end differentiable ( hence trainable ) network to formulate a unified approach for 3D object detection from monocular images. 
+
+
+
+
+## Background
+or 
+## Method
+The architecture consists of two main modules. The first module is a fully connected CNN, which extracts features from the input image. 
+These features are further used across multiple heads for predicting appearance-related properties of an object namely dimension, orientation and ordered list of 2D perspective keypoints. The second module is for geometric reasoning which applies point-to-point geometric constraints for 3D position prediction. Now let us understand at each component in some more detail :
+
+
+### Detection Heads 
+1. Main Centre 
+  * Predicts the 2D bounding box center of every object. One point per instance.
+  * The prediction is a heatmap around the centers, with one channel for every category. 
+2. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Homeruns
+
+## Notes
