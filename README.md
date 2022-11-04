@@ -25,7 +25,15 @@ These features are further used across multiple heads for predicting appearance-
 1. Main Centre 
   * Predicts the 2D bounding box center of every object. One point per instance.
   * The prediction is a heatmap around the centers, with one channel for every category. 
-2. 
+2. Keypoints 
+  * Projections of 3D corners and centers onto the 2D image plane. ( 8 corners + 1 center = 9 points )
+  * 18 dimensional because each of the 9 points ( x, y ) is 2 dimensional.
+3. Dimensions
+  * Height, Width and Length
+  * Regression of residual values instead of absolute values
+  * Scaled by constants H = 1.63, W = 1.53, L = 3.88
+4. Orientation 
+  * 
 
 
 
