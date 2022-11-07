@@ -71,7 +71,7 @@ The GUPNet takes an image as input and processes it with a 2D detection backbone
 </thead>
 <tbody>
   <tr>
-    <td class="tg-9wq8"><a href="#M3DSSD">M3DSSD</a></td>
+    <td class="tg-9wq8">KM3D</td>
     <td class="tg-nrix">None</td>
     <td class="tg-nrix">17.51</td>
     <td class="tg-nrix">11.46</td>
@@ -82,7 +82,7 @@ The GUPNet takes an image as input and processes it with a 2D detection backbone
     <td class="tg-nrix">CVPR2021</td>
   </tr>
   <tr>
-    <td class="tg-9wq8"><a href="#Monoflex">Monoflex</a></td>
+    <td class="tg-9wq8">Monoflex</td>
     <td class="tg-nrix">None</td>
     <td class="tg-nrix">19.94</td>
     <td class="tg-nrix">13.89</td>
@@ -93,7 +93,7 @@ The GUPNet takes an image as input and processes it with a 2D detection backbone
     <td class="tg-nrix">CVPR2021</td>
   </tr>
   <tr>
-    <td class="tg-9wq8"><a href="#GUPNet">GUPNet</a></td>     
+    <td class="tg-9wq8">GUPNet</td>     
     <td class="tg-nrix">None</td>     
     <td class="tg-nrix">20.11</td>
     <td class="tg-nrix">14.20</td>
@@ -104,7 +104,7 @@ The GUPNet takes an image as input and processes it with a 2D detection backbone
     <td class="tg-nrix">ICCV2021</td>
   </tr>
   <tr>
-    <td class="tg-9wq8"><a href="#MonoCon">MonoCon</a></td>     
+    <td class="tg-9wq8">MonoCon</td>     
     <td class="tg-nrix">None</td>     
     <td class="tg-nrix">22.50</td>
     <td class="tg-nrix">16.46</td>
