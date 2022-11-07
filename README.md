@@ -37,7 +37,7 @@ The GUPNet takes an image as input and processes it with a 2D detection backbone
 ![image](GUPNet.png)
 
 ## Performance Comparison
-| First Header  | Second Header |
+| Model  | KITTI Test AP 3D R-40 |
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
