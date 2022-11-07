@@ -15,7 +15,7 @@ Here is where the essensce of approach proposed by the paper comes into play. Si
 The architecture consists of two main modules. The first module is a fully connected CNN, which extracts features from the input image. 
 These features are further used across multiple heads for predicting appearance-related properties of an object namely dimension, orientation and ordered list of 2D perspective keypoints. The second module is for geometric reasoning which applies point-to-point geometric constraints for 3D position prediction. Now let us understand at each component in some more detail :
 
-
+![image](mono.png)
 
 ## 2.  MonoCon : Learning Auxiliary Monocular Contexts Helps Monocular 3D Object Detection [[Link]](https://arxiv.org/abs/2112.04628)
 
@@ -29,7 +29,7 @@ The paper deals with Monocular 3D object detection for truncated objects by expl
 
 ![image](monoflex.png)
 
-## 4. GUPNet : Geometry Uncertainty Projection Network for Monocular 3D Object Detection
+## 4. GUPNet : Geometry Uncertainty Projection Network for Monocular 3D Object Detection [[Link]](https://arxiv.org/abs/2107.13774)
 Geometric Projection refers to the process of deriving depth using 2D height, 3D Height and focal length. The key challenge of using geometric projections is error amplification. When there is a small error in the 3D height, it is amplified when this 3D height is used to derive depth. The error amplification is tackled using a GUP module to obtained the Geometry guided uncertainity of the inferred depth. Instead of discrete values, this model returns a distribuion of the depth, which helps to measure the quality of the depth predicitons using inference. Furthermore, another challenge faced by such a model is that of training instability due to initial wrong estimates of the 3D height ( hence depth ). In simple words, if the initial predicted 2D and 3D height values by the model are that of bad quality ( which they generally are ), the overall training is mislead, and the performance is damaged.  Heirarchical Task Learning strategy is used during training to tackle this problem. Intuitively, HLT is inspired by how humans learn new things, by first learning the basics well, and then learn the advanced tasks ( dependent on these basics ). To that end, the model divides all losses into several stages and only when all the tasks of a previous stage are learnt well enough, the subsequent tasks start learning. In particular, only when the 2D detection is trained well enough, the 3D detection training begins. And only when the 2D and 3D detections are trained well, the depth estimation training starts. 
 
 The GUPNet takes an image as input and processes it with a 2D detection backbone, resulting in 2D bounding boxes ( RoI ), and then computes basic 3D information like angle, dimension and 3D projected center for each box. After this, the GUP module predicts the depth distribution via uncertainity modeling. This depth distribution provides accurate inferred depth value with corresponding uncertainity. This uncertainity can be mapped to 3D detection confidence during inference. 
