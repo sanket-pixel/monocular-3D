@@ -38,3 +38,5 @@ The method trains a common CNN based feature backbone for a primary task and a s
 
 
 ![image](Monocon.png)
+
+## 3. MonoFlex : Objects are Different: Flexible Monocular 3D Object Detection [[Link]](https://arxiv.org/abs/2104.02323)
