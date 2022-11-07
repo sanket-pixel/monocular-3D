@@ -38,30 +38,3 @@ The method trains a common CNN based feature backbone for a primary task and a s
 
 
 ![image](Monocon.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Homeruns
-
-## Notes
