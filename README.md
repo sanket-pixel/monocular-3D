@@ -79,7 +79,7 @@ The GUPNet takes an image as input and processes it with a 2D detection backbone
     <td class="tg-nrix">-</td>
     <td class="tg-nrix">-</td>
     <td class="tg-nrix">-</td>
-    <td class="tg-nrix">CVPR2021</td>
+    <td class="tg-nrix">CVPR2020</td>
   </tr>
   <tr>
     <td class="tg-9wq8">Monoflex</td>
