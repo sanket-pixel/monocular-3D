@@ -40,3 +40,4 @@ The method trains a common CNN based feature backbone for a primary task and a s
 ![image](Monocon.png)
 
 ## 3. MonoFlex : Objects are Different: Flexible Monocular 3D Object Detection [[Link]](https://arxiv.org/abs/2104.02323)
+The paper deals with Monocular 3D object detection for truncated objects by explicitly modeling objects that are inside and outside the image. The objects are divided into inside and outside based on whther the projected 3D center are inside or outisde the image. For objects with their projected 3D centers inside the image, the center is direcly regressed. In contrary, when the projected center lies outside the image, the intersection between image edge and line connecting 2D bbox and 3D bbox center is used. The offset of this intersection point to the center of the object is predicted. 
