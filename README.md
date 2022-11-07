@@ -73,9 +73,9 @@ The GUPNet takes an image as input and processes it with a 2D detection backbone
   <tr>
     <td class="tg-9wq8">KM3D</td>
     <td class="tg-nrix">None</td>
-    <td class="tg-nrix">17.51</td>
-    <td class="tg-nrix">11.46</td>
-    <td class="tg-nrix">8.98 </td>
+    <td class="tg-nrix">16.73</td>
+    <td class="tg-nrix">11.45</td>
+    <td class="tg-nrix">9.92 </td>
     <td class="tg-nrix">-</td>
     <td class="tg-nrix">-</td>
     <td class="tg-nrix">-</td>
