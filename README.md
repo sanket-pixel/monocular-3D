@@ -35,3 +35,9 @@ Geometric Projection refers to the process of deriving depth using 2D height, 3D
 The GUPNet takes an image as input and processes it with a 2D detection backbone, resulting in 2D bounding boxes ( RoI ), and then computes basic 3D information like angle, dimension and 3D projected center for each box. After this, the GUP module predicts the depth distribution via uncertainity modeling. This depth distribution provides accurate inferred depth value with corresponding uncertainity. This uncertainity can be mapped to 3D detection confidence during inference. 
 
 ![image](GUPNet.png)
+
+## Performance Comparison
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
