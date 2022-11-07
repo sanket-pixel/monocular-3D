@@ -36,8 +36,240 @@ The GUPNet takes an image as input and processes it with a 2D detection backbone
 
 ![image](GUPNet.png)
 
-## Performance Comparison
-| Model  | KITTI Test AP 3D R-40 |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+# KITTI Results
+<!-- <font color=blue, size=4>val/test</font><font color=blue, size=3> (R<sub>11</sub>/R<sub>40</sub>) @ IOU=0.7</font> -->
+<!-- <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:5px 10px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-nrix{border-color:inherit;text-align:center;vertical-align:middle}
+</style> -->
+<table class="tg" style="text-align:center">
+<thead>
+  <tr>
+    <th class="tg-9wq8" rowspan="2">Method</th>
+    <th class="tg-nrix" rowspan="2">Extra</th>
+    <th class="tg-nrix" colspan="3">Test,      
+    AP<sub>3D</sub>|<sub>R<sub>40</sub></th>
+    <th class="tg-nrix" colspan="3">Val,      
+    AP<sub>3D</sub>|<sub>R<sub>40</sub></th>
+<!--       <th class="tg-nrix" colspan="3">Val, 
+    AP<sub>3D</sub>|<sub>R<sub>11</sub></th> -->
+    <th class="tg-nrix" rowspan="2">Reference</th>
+  </tr>
+  <tr>
+    <th class="tg-nrix">Easy</th>
+    <th class="tg-nrix">Mod.</th>
+    <th class="tg-nrix">Hard</th>
+    <th class="tg-nrix">Easy</th>
+    <th class="tg-nrix">Mod.</th>
+    <th class="tg-nrix">Hard</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-9wq8"><a href="#MonoPSR">MonoPSR</a></td>     
+    <td class="tg-nrix">Lidar</td>     
+    <td class="tg-nrix">10.76</td>
+    <td class="tg-nrix">7.25</td>
+    <td class="tg-nrix">5.85</td>
+    <td class="tg-nrix">-</td>
+    <td class="tg-nrix">-</td>
+    <td class="tg-nrix">-</td>
+    <td class="tg-nrix">CVPR2019</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#MonoRUn">MonoRUn</a></td>     
+    <td class="tg-nrix">Lidar</td>     
+    <td class="tg-nrix">19.65</td>
+    <td class="tg-nrix">12.30</td>
+    <td class="tg-nrix">10.58</td>
+    <td class="tg-nrix">20.02</td>
+    <td class="tg-nrix">14.65</td>
+    <td class="tg-nrix">12.61</td>
+    <td class="tg-nrix">CVPR2021</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#CaDDN">CaDDN</a></td>     
+    <td class="tg-nrix">Lidar</td>     
+    <td class="tg-nrix">19.17</td>
+    <td class="tg-nrix">13.41</td>
+    <td class="tg-nrix">11.46</td>
+    <td class="tg-nrix">23.57</td>
+    <td class="tg-nrix">16.31</td>
+    <td class="tg-nrix">13.84</td>
+    <td class="tg-nrix">CVPR2021</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#MonoDistill">MonoDistill</a></td>     
+    <td class="tg-nrix">Lidar</td>     
+    <td class="tg-nrix">22.97</td>
+    <td class="tg-nrix">16.03</td>
+    <td class="tg-nrix">13.60</td>
+    <td class="tg-nrix">24.31</td>
+    <td class="tg-nrix">18.47</td>
+    <td class="tg-nrix">15.76</td>
+    <td class="tg-nrix">ICLR2022</td>
+  </tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#AM3D">AM3D</a></td>
+    <td class="tg-nrix">Depth</td>     
+    <td class="tg-nrix">16.50</td>
+    <td class="tg-nrix">10.74</td>
+    <td class="tg-nrix">9.52</td>
+    <td class="tg-nrix">28.31</td>
+    <td class="tg-nrix">15.76</td>
+    <td class="tg-nrix">12.24</td>
+    <td class="tg-nrix">ICCV2019</td>
+    </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#PatchNet">PatchNet</a></td>     
+    <td class="tg-nrix">Depth</td>     
+    <td class="tg-nrix">15.68</td>
+    <td class="tg-nrix">11.12</td>
+    <td class="tg-nrix">10.17</td>
+    <td class="tg-nrix">31.60</td>
+    <td class="tg-nrix">16.80</td>
+    <td class="tg-nrix">13.80</td>
+    <td class="tg-nrix">ECCV2020</td>
+  </tr>
+    <tr>
+    <td class="tg-9wq8"><a href="#D4LCN">D4LCN</a></td>     
+    <td class="tg-nrix">Depth</td>     
+    <td class="tg-nrix">16.65</td>
+    <td class="tg-nrix">11.72</td>
+    <td class="tg-nrix">9.51</td>
+    <td class="tg-nrix">22.32</td>
+    <td class="tg-nrix">16.20</td>
+    <td class="tg-nrix">12.30</td>
+    <td class="tg-nrix">CVPRW2020</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#DFR-Net">DFR-Net</a></td>     
+    <td class="tg-nrix">Depth</td>     
+    <td class="tg-nrix">19.40</td>
+    <td class="tg-nrix">13.63</td>
+    <td class="tg-nrix">10.35</td>
+    <td class="tg-nrix">24.81</td>
+    <td class="tg-nrix">17.78</td>
+    <td class="tg-nrix">14.41</td>
+    <td class="tg-nrix">ICCV2021</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#Pseudo-Stereo">Pseudo-Stereo</a></td>     
+    <td class="tg-nrix">Depth</td>     
+    <td class="tg-nrix">23.74</td>
+    <td class="tg-nrix">17.74</td>
+    <td class="tg-nrix">15.14</td>
+    <td class="tg-nrix">35.18</td>
+    <td class="tg-nrix">24.15</td>
+    <td class="tg-nrix">20.35</td>
+    <td class="tg-nrix">CVPR2022</td>
+  </tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr>
+    <td class="tg-9wq8" nowrap="nowrap"><a href="#M3D-RPN">M3D-RPN</a></td>
+    <td class="tg-nrix">None</td>
+    <td class="tg-nrix">14.76</td>
+    <td class="tg-nrix">9.71</td>
+    <td class="tg-nrix">7.42</td>
+    <td class="tg-nrix">14.53</td>
+    <td class="tg-nrix">11.07</td>
+    <td class="tg-nrix">8.65</td>
+    <td class="tg-nrix">ICCV2019</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#SMOKE">SMOKE</a></td>
+    <td class="tg-nrix">None</td>
+    <td class="tg-nrix">14.03</td>
+    <td class="tg-nrix">9.76</td>
+    <td class="tg-nrix">7.84 </td>
+    <td class="tg-nrix">-</td>
+    <td class="tg-nrix">-</td>
+    <td class="tg-nrix">-</td>
+    <td class="tg-nrix">CVPRW2020</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#MonoPair">MonoPair</a></td>
+    <td class="tg-nrix">None</td>
+    <td class="tg-nrix">13.04</td>
+    <td class="tg-nrix">9.99</td>
+    <td class="tg-nrix">8.65 </td>
+    <td class="tg-nrix">16.28</td>
+    <td class="tg-nrix">12.30</td>
+    <td class="tg-nrix">10.42</td>
+    <td class="tg-nrix">CVPR2020</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#RTM3D">RTM3D</a></td>
+    <td class="tg-nrix">None</td>
+    <td class="tg-nrix">14.41</td>
+    <td class="tg-nrix">10.34</td>
+    <td class="tg-nrix">8.77 </td>
+    <td class="tg-nrix">-</td>
+    <td class="tg-nrix">-</td>
+    <td class="tg-nrix">-</td>
+    <td class="tg-nrix">ECCV2020</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#M3DSSD">M3DSSD</a></td>
+    <td class="tg-nrix">None</td>
+    <td class="tg-nrix">17.51</td>
+    <td class="tg-nrix">11.46</td>
+    <td class="tg-nrix">8.98 </td>
+    <td class="tg-nrix">-</td>
+    <td class="tg-nrix">-</td>
+    <td class="tg-nrix">-</td>
+    <td class="tg-nrix">CVPR2021</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#Monoflex">Monoflex</a></td>
+    <td class="tg-nrix">None</td>
+    <td class="tg-nrix">19.94</td>
+    <td class="tg-nrix">13.89</td>
+    <td class="tg-nrix">12.07 </td>
+    <td class="tg-nrix">23.64</td>
+    <td class="tg-nrix">17.51</td>
+    <td class="tg-nrix">14.83</td>
+    <td class="tg-nrix">CVPR2021</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#GUPNet">GUPNet</a></td>     
+    <td class="tg-nrix">None</td>     
+    <td class="tg-nrix">20.11</td>
+    <td class="tg-nrix">14.20</td>
+    <td class="tg-nrix">11.77</td>
+    <td class="tg-nrix">22.76</td>
+    <td class="tg-nrix">16.46</td>
+    <td class="tg-nrix">13.72</td>
+    <td class="tg-nrix">ICCV2021</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#MonoCon">MonoCon</a></td>     
+    <td class="tg-nrix">None</td>     
+    <td class="tg-nrix">22.50</td>
+    <td class="tg-nrix">16.46</td>
+    <td class="tg-nrix">13.95</td>
+    <td class="tg-nrix">26.33</td>
+    <td class="tg-nrix">19.01</td>
+    <td class="tg-nrix">15.98</td>
+    <td class="tg-nrix">AAAI2022</td>
+  </tr>
+  <tr>
+    <td class="tg-9wq8"><a href="#MonoDDE">MonoDDE</a></td>     
+    <td class="tg-nrix">None</td>     
+    <td class="tg-nrix">24.93</td>
+    <td class="tg-nrix">17.14</td>
+    <td class="tg-nrix">15.10</td>  
+    <td class="tg-nrix">26.66</td>
+    <td class="tg-nrix">19.75</td>
+    <td class="tg-nrix">16.72</td> 
+    <td class="tg-nrix">CVPR2022</td>
+  </tr>
+      
+</tbody>
+</table>
